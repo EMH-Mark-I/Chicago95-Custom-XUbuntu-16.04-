@@ -1,2 +1,9 @@
 #pulseaudio-button { padding: 6px 6px; }
 #xfce4-power-manager-plugin { padding: 6px 6px; }
+
+/*Header bar fix for ugly Gnome csd*/
+GtkHeaderBar {
+box-shadow: none;
+border-style: none;
+border-bottom: 2px solid #c0c0c0;
+}
