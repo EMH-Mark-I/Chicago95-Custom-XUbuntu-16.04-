@@ -3,7 +3,14 @@
 
 /*Header bar fix for ugly Gnome csd*/
 GtkHeaderBar {
-box-shadow: none;
-border-style: none;
-border-bottom: 2px solid #c0c0c0;
+padding: 3px;
+background-color: #c0c0c0;
+border-bottom: 1px solid #FFF;
+border-right: none;
+box-shadow: inset 0px -1px #808080;
+color: black;
+}
+
+GtkMenuButton {
+color: black;
 }
