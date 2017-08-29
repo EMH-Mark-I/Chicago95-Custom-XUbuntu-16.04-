@@ -11,6 +11,8 @@ box-shadow: inset 0px -1px #808080;
 color: black;
 }
 
-GtkApplicationWindow GtkHeaderBar  * {
+GtkHeaderBar GtkMenuButton,
+GtkHeaderBar GtkButton,
+GtkHeaderBar GtkBox GtkLabel {
 color: black;
 }
