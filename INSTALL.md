@@ -84,6 +84,7 @@ Install the dependencies:
 
 Move to gtk3-nocsd directory and build the application:
 
+    cd gtk3-nocsd-master/
     make
 
 Move the newly compiled executable file and library.
