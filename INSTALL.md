@@ -69,19 +69,32 @@ In the “Items” tab, add the following in this order:
     12. Orage Panel Clock. ( In the plugin settings, enable check box “Show frame” and replace the text in “Line 1” with %I:%M %p.) Note: If you want to display the date in the clock, append “%D” in “Line 1.” If you want a better looking date, you could replace that by appending “%b %m %Y” instead.
 
 #### • GTK3 (GNOME) applications missing titlebar & border - workaround:
-
 Disabling Client Side Decorations with [gtk3-nocsd](https://github.com/PCMan/gtk3-nocsd) will allow for the theme to correctly display borders and titlebars in GTK3 applications utilizing the CSD "feature."
 
 Client Side Decorations is a design decision from GNOME developers that runs contrary to established practice in the X11 windowing system. Client Side Decorations are unacceptable for non GNOME desktop enviroments, so I recommend disabling it as shown in the following steps.
 
-Add the repo and update:
+Download the repo and extract it:
 
-    sudo add-apt-repository ppa:nilarimogard/webupd8
-    sudo apt update  
+    wget https://github.com/PCMan/gtk3-nocsd/archive/master.zip
+    unzip master.zip
 
-Install gtk3-nocsd:
+Install the dependencies:
 
-    sudo apt-get install gtk3-nocsd
+    sudo apt install pkg-config libgtk-3-dev libgirepository1.0-dev
+
+Move to gtk3-nocsd directory and build the application:
+
+    make
+
+Move the newly compiled executable file and library.
+
+    sudo cp libgtk3-nocsd.so.0 /usr/lib/x86_64-linux-gnu/
+    sudo cp gtk3-nocsd /usr/bin/
+
+Set the system variable for gtk3-nocsd.
+
+    echo "GTK_CSD=0" | sudo tee --append /etc/environment
+    echo "LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libgtk3-nocsd.so.0" | sudo tee --append /etc/environment
 
 Log out then log back in.
 
