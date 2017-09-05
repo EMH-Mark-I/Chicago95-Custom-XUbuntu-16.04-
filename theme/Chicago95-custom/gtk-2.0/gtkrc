@@ -529,7 +529,8 @@ style "xfdesktop-icon-view" {
 #  XfdesktopIconView::shadow-blur-radius = 2				#Enable this if you want a a blurry shadow behind text
   XfdesktopIconView::cell-spacing = 5
   XfdesktopIconView::cell-padding = 0
-  XfdesktopIconView::cell-text-width-proportion = 2
+  XfdesktopIconView::cell-text-width-proportion = 2.4
+  XfdesktopIconView::ellipsize-icon-labels = 0
 
   fg[NORMAL] = @selected_fg_color
   fg[ACTIVE] = @selected_fg_color
