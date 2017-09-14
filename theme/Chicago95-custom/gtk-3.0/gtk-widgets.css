@@ -210,7 +210,7 @@ GtkAssistant .sidebar {
  * button *
  **********/
 .button {
-    padding: 5px;
+    padding: 6 6 6 6;
     border-top: 1px solid white;
     border-left: 1px solid white;
     border-right: 1px solid black;
@@ -222,17 +222,29 @@ GtkAssistant .sidebar {
 
 }
 
+GtkButton {
+    padding: 6 6 6 6;
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    border-radius: 0;
+    color: black;
+    background-color: #c0c0c0;
+
+}
+
 .button:hover {
     background-image: none;
 }
 
-.button:active {
+.button:active,
+GtkButton:not(GtkCheckButton):active {
     -GtkWidget-focus-padding: 1;
     -GtkWidget-focus-line-width: 1;
 
-    padding: 4px;
-    padding-top: 6px;
-    padding-left: 6px;
+    padding-left: 8px;
+    padding-right: 4px;
     border-top: 1px solid black;
     border-left: 1px solid black;
     border-right: 1px solid white;
