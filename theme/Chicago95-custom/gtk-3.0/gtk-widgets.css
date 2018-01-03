@@ -210,12 +210,12 @@ GtkAssistant .sidebar {
  * button *
  **********/
 .button {
-    padding: 6 6 6 6;
+    padding: 6px 6px 6px 6px;
     border-top: 1px solid white;
     border-left: 1px solid white;
     border-right: 1px solid black;
     border-bottom: 1px solid black;
-    border-radius: 0;
+    border-radius: 0px;
     box-shadow: inset -1px -1px 0px 0px #808080;
     color: black;
     background-color: #c0c0c0;
@@ -223,12 +223,12 @@ GtkAssistant .sidebar {
 }
 
 GtkButton {
-    padding: 6 6 6 6;
+    padding: 6px 6px 6px 6px;
     border-top: 1px solid white;
     border-left: 1px solid white;
     border-right: 1px solid black;
     border-bottom: 1px solid black;
-    border-radius: 0;
+    border-radius: 0px;
     color: black;
     background-color: #c0c0c0;
 
