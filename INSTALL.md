@@ -3,20 +3,35 @@
 Step 1: Create ".themes" and ".icons" directories  in your user directory if they don't already exist.
 (Note: You may have to enable "view hidden folders" in the file manager to see the ".themes" ".icons" directories after creating them.)
 
-Step 2: Copy the "Chicago95-custom" directory into the ".themes" directory. 
+    mkdir -p ~/.themes/ ~/.icons/
+
+Step 2: Copy the "Chicago95-custom" directory into the ".themes" directory.
+
+    cp -r Chicago95-Custom-XUbuntu-16.04-/theme/Chicago95-custom/ ~/.themes/
 
 Step 3: Copy the "Chicago95-icons-tux" directory into the ".icons" directory.
 
+    cp -r Chicago95-Custom-XUbuntu-16.04-/icons/Chicago95-icons-tux/ ~/.icons/
+
 Step 4: Copy the "gtk.css" file from the "misc" directory into "/home/$USER/.config/gtk-3.0/" or append the file if a gtk.css file already exists.
 (Note: You may have to create the "gtk-3.0" directory.)
+
+    mkdir -p ~/.config/gtk-3.0 && cat Chicago95-Custom-XUbuntu-16.04-/misc/gtk.css >> ~/.config/gtk-3.0/gtk.css
 
 ## Configuration
 
 Enable the notification balloon theme.
 
+• To set the notification theme, open the system notification settings manager (xfce4-notifyd-config) and in the "Theme" option select Chicago95 in the pull down menu.
+
 Enable the XFCE shell and icon themes.
 
+• In XFCE select Settings -> Appearance. Click on 'Style' and select Chicago95.
+• In the Appearance manager click on the "Icons" tab and select Chicago95.
+
 Enable the XFCE window manager theme.
+
+• In XFCE select Settings -> Window Manager. Under 'Style' select Chicago95-custom.
 
 #### • Font Settings:
 
@@ -40,7 +55,7 @@ In the XFCE "Window Manager Tweaks" manager, select the "Compositor" tab. Unchec
 
 #### • Panel Setup:
 
-Create a new panel if necessary. Horizontal, 32px high ONLY, and 100% Length. In the “Appearance” tab set the background style to "None" so that it inherits the theme style. (Only horizontal taskbar. No vertical taskbar, sorry.)
+Create a new panel if necessary. Horizontal, 32px high ONLY (this is for the persistent START button), and 100% Length. In the “Appearance” tab set the background style to "None" so that it inherits the theme style. (Only horizontal taskbar. No vertical taskbar, sorry.)
 
 In the “Items” tab, add the following in this order:
 
@@ -69,9 +84,11 @@ In the “Items” tab, add the following in this order:
     12. Orage Panel Clock. ( In the plugin settings, enable check box “Show frame” and replace the text in “Line 1” with %I:%M %p.) Note: If you want to display the date in the clock, append “%D” in “Line 1.” If you want a better looking date, you could replace that by appending “%b %m %Y” instead.
 
 #### • GTK3 (GNOME) applications missing titlebar & border - workaround:
-Disabling Client Side Decorations with [gtk3-nocsd](https://github.com/PCMan/gtk3-nocsd) will allow for the theme to correctly display borders and titlebars in GTK3 applications utilizing the CSD "feature."
+Disabling Client Side Decorations with [gtk3-nocsd](https://github.com/PCMan/gtk3-nocsd) will allow for the XFCE window manager to correctly display borders and titlebars in GTK3 applications utilizing the CSD "feature" hack. I've made this theme to be possible to use without a compositor.
 
 Client Side Decorations is a design decision from GNOME developers that runs contrary to established practice in the X11 windowing system. Client Side Decorations are unacceptable for non GNOME desktop enviroments, so I recommend disabling it as shown in the following steps.
+
+• If you want to **INSTALL** gtk3-nocsd:
 
 Download the repo and extract it:
 
@@ -99,6 +116,23 @@ Set the system variable for gtk3-nocsd.
 
 Log out then log back in.
 
+• If you want to **UNINSTALL** gtk3-nocsd:
+
+Remove the following system variables from your `/etc/environment` file with a file editor such as nano or VI.
+
+    GTK_CSD=0
+    LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libgtk3-nocsd.so.0
+
+Log out then log back in before continuing!
+
+Remove the gtk3-nocsd executable and library from your system.
+
+    rm /usr/bin/gtk3-nocsd
+    rm /usr/lib/x86_64-linux-gnu/libgtk3-nocsd.so.0
+
+Remove the dependencies unless they are required by any other appplication.
+
+    sudo apt remove libgtk-3-dev libgirepository1.0-dev
 
 #### • Whisker Menu / Application Menu start button:
 
@@ -106,7 +140,7 @@ Open the properties menu of either Whisker Menu or Application Menu by right cli
 
 The custom Start Button icons are located in the following directory (depending on where you installed the overall theme): /home/$USER/.themes/Chicago95-custom/misc/GTK2 Start Buttons/. Select a button that you would like.
 
-If the icon appears crunched or blurry, then log out and log back in. The icon should appear a regular size.
+If the icon appears crunched or blurry, then log out and log back in. The icon should appear a regular size. If it still appears out of resolution, make sure that the task panel is set to 32px high.
 
 ## Extra Stuff:
 
