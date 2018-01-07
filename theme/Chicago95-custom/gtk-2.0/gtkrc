@@ -17,7 +17,7 @@ gtk-icon-sizes = "mini-commander-icon=32,32:print-manager=32,32:panel-button=32,
 style "standard-default"
 {
   GtkWidget::interior_focus = 2
-  GtkButton::default_border = { 1, 1, 1, 1 }
+  GtkButton::default_border = { 0, 0, 0, 0 }
   GtkButton::default_outside_border = { 0, 0, 0, 0 }
   GtkOptionMenu::indicator_size = { 9, 5 }
   GtkOptionMenu::indicator_spacing = { 7, 5, 2, 2 }
@@ -577,3 +577,4 @@ include "slider.rc"
 include "toolbutton.rc"
 include "tabs.rc"
 include "menubar.rc"
+include "button.rc"
