@@ -11,9 +11,7 @@ gtk3-nocsd (See INSTALL.md for setup)
 (Preferred distro is Xubuntu 16.04 LTS)
 
 #### Known Issues
-GNOME applications such as Disks, Gedit, Software Store, and other GTK3 applications utilizing CSD (Client Side Decorations) won't correctly render the outter borders and titlebars for this theme. (Please read the INSTALL.md for a workaround!)
-
-Thunderbird, FireFox, and potentially other GTK3 applications that I haven’t tested appear to not render menu borders.
+Some GTK applications such as Firefox might display inconsistencies such as adopting elements of the system theme but attempt to re-fit them in a flat / material design approach. In regards to visual consistency, this theme may not be perfectly compatible with modern GTK applications.
 
 #### Screenshots
 ![](images/desktop.png "Desktop")
@@ -21,6 +19,11 @@ Thunderbird, FireFox, and potentially other GTK3 applications that I haven’t t
 ![](images/gtk2-widget-factory.png "GTK2 Widget Factory")
 
 ![](images/gtk3-widget-factory.png "GTK3 Widget Factory")
+
+####The reasoning behind disabling Client Side Decorations for this theme:
+I wanted the theme to be usable across both compositing and non-compositing environments, which without compositing effects might cause some GTK3 applications and context menus to either draw a large dark border around the application itself or no border at all (depending on how the theme is setup.) I made the adjustments to compensate for this so that the theme would be usable in non-compositing environments. #2: Due to reason #1, I couldn't allow GTK3 applications utilizing Client Side Decorations to draw their own borders or else the window manager would cause a double border effect for users that did use compositing; one border being rendered from the application and the second being rendered by the window manager.
+
+I'm currently unsure of how to make GTK3 applications that are utilizing CSDs to **properly render** a border in the skeuomorphic style of this theme across both compositing and non-compositing environments. I find that the window manager is more consistent in correctly rendering borders in both environments compared to CSDs wherein the decision would be left to the application and not the system theme, so I decided to rework parts of the theme around the assumption of disabling clientside decorations via gtk3-nocsd. Interactive elements in CSD "titlebars" are now themed to appear as a simple toolbar and borders are completely removed while the window manager is only allowed to decorate the application with a traditional titlebar and border, not the application itself; that functionality is now revoked and put back into the control of the theme and the window manager. Some applications like Google Chrome or Valve's Steam client will completely render their own interface, themes, titlebars, and borders which are unaffected by compositing and non-compositing environments; this approach to a custom tailored application design is ideal compared to the GTK3 CSD framework since it is independent from the system theme.
 
 #### Credits
 Grassmunk 4/2016

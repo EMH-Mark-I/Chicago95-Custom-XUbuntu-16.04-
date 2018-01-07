@@ -22,11 +22,12 @@ Step 4: Copy the "gtk.css" file from the "misc" directory into "/home/$USER/.con
 
 Enable the notification balloon theme.
 
-• To set the notification theme, open the system notification settings manager (xfce4-notifyd-config) and in the "Theme" option select Chicago95 in the pull down menu.
+• To set the notification theme, open the system notification settings manager (xfce4-notifyd-config) and in the "Theme" option select Chicago95-custom in the pull down menu.
 
 Enable the XFCE shell and icon themes.
 
-• In XFCE select Settings -> Appearance. Click on 'Style' and select Chicago95.
+• In XFCE select Settings -> Appearance. Click on 'Style' and select Chicago95-custom.
+
 • In the Appearance manager click on the "Icons" tab and select Chicago95.
 
 Enable the XFCE window manager theme.
@@ -55,7 +56,7 @@ In the XFCE "Window Manager Tweaks" manager, select the "Compositor" tab. Unchec
 
 #### • Panel Setup:
 
-Create a new panel if necessary. Horizontal, 32px high ONLY (this is for the persistent START button), and 100% Length. In the “Appearance” tab set the background style to "None" so that it inherits the theme style. (Only horizontal taskbar. No vertical taskbar, sorry.)
+Create a new panel if necessary. Horizontal, 32px high ONLY (this is for the persistent START button), and 100% Length. (Only horizontal taskbar. No vertical taskbar, sorry.) In the “Appearance” tab set the background style to "None" so that it inherits the theme style and adjust the Alpha to 100.
 
 In the “Items” tab, add the following in this order:
 
@@ -69,7 +70,7 @@ In the “Items” tab, add the following in this order:
 
     5. Separator (Handle Style); 
 
-    6. Window Buttons (Sorting Order: Time-stamp and Window Grouping is Always. Uncheck “Show Handle” if it’s enabled.); 
+    6. Window Buttons (Sorting Order: Time-stamp and Window Grouping is Always. Uncheck “Show Handle” if it’s enabled. Uncheck "Show flat buttons" if it's enabled.); 
 
     7. Separator (Transparent with Expanding); 
 
@@ -83,10 +84,10 @@ In the “Items” tab, add the following in this order:
 
     12. Orage Panel Clock. ( In the plugin settings, enable check box “Show frame” and replace the text in “Line 1” with %I:%M %p.) Note: If you want to display the date in the clock, append “%D” in “Line 1.” If you want a better looking date, you could replace that by appending “%b %m %Y” instead.
 
-#### • GTK3 (GNOME) applications missing titlebar & border - workaround:
-Disabling Client Side Decorations with [gtk3-nocsd](https://github.com/PCMan/gtk3-nocsd) will allow for the XFCE window manager to correctly display borders and titlebars in GTK3 applications utilizing the CSD "feature" hack. I've made this theme to be possible to use without a compositor.
+#### • GTK3 (GNOME) applications missing titlebar colour & border - workaround:
+Disabling Client Side Decorations with [gtk3-nocsd](https://github.com/PCMan/gtk3-nocsd) will allow for the XFCE window manager to correctly display borders and titlebars over GTK3 applications that are utilizing Client Side Decorations. Check the README.md for this reason.
 
-Client Side Decorations is a design decision from GNOME developers that runs contrary to established practice in the X11 windowing system. Client Side Decorations are unacceptable for non GNOME desktop enviroments, so I recommend disabling it as shown in the following steps.
+Note: If you run this theme without gtk3-nocsd, you will notice some GTK3 applications (Software centre, Cat Fish file search, or the Gnome Disk utility) missing visible borders and lack of a distinct header bar. They are still usable, but just unsightly.
 
 • If you want to **INSTALL** gtk3-nocsd:
 
