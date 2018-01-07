@@ -685,32 +685,30 @@ GtkTreeView.view.expander:dir(rtl) {
 
 
 
-/**************
- * list boxes *
- **************/
-.list {
-    padding: 1px;
-    border: 1px solid black;
-    /* background-color: #808080; */
-    box-shadow: 0 0 0;
-    color: @theme_fg_color;
+/****************
+ * List Box *
+ ***************/
+
+GtkListBox {
+background: white;
 }
 
-.list-row {
-   padding: 2px;
-   box-shadow: 0 0 0;
-   border: 1px solid #c0c0c0;
+GtkListBox GtkBin:not(GtkButton) {
+border: 1px solid transparent;
+box-shadow: none;
 }
 
-.list-row:selected {
-    border-width: 1px;
-    border-style: solid;
-    border-color: #000 #fff #fff #000;
-    box-shadow: inset 1px 1px #808080,
-                inset -1px -1px #c0c0c0;
-    background-color: @bg_color;
-    color: @theme_fg_color;
-} 
+GtkListBox GtkBin GtkLabel {
+color: black;
+}
+
+GtkListBox GtkBin:selected GtkLabel {
+color: white;
+}
+
+GtkListBox GtkBin:selected {
+background: #000080;
+}
 
 
 
@@ -1823,7 +1821,7 @@ GtkComboBox .separator {
 .sidebar.view,
 .sidebar .view,
 .sidebar GtkScrolledWindow {
-    background-color: #808080;
+    background-color: #FFFFFF;
     color: #FFF;
     box-shadow: none;
 }
@@ -1858,9 +1856,9 @@ GtkComboBox .separator {
     color: @theme_selected_fg_color;
 }
 */
-.sidebar .frame {
-    border-width: 0;
-}
+/*.sidebar .frame {
+    border-width: 4;
+}*/
 
 /*addition start*/
 .sidebar-item {
