@@ -460,17 +460,17 @@
 }
 
 .menu .menuitem .arrow:dir(ltr) {
-        -gtk-icon-source: url("assets/arrow-right.png");
+        -gtk-icon-source: url("assets/arrow-right_small.png");
 }
 .menu .menuitem .arrow:dir(rtl) {
-        -gtk-icon-source: url("assets/arrow-left.png");
+        -gtk-icon-source: url("assets/arrow-left_small.png");
 }
 
 .menu .menuitem .arrow:dir(ltr):hover {
-        -gtk-icon-source: url("assets/arrow-right-hover.png");
+        -gtk-icon-source: url("assets/arrow-right-hover_small.png");
 }
 .menu .menuitem .arrow:dir(rtl):hover {
-        -gtk-icon-source: url("assets/arrow-left-hover.png");
+        -gtk-icon-source: url("assets/arrow-left-hover_small.png");
 }
 
 .menu .menuitem .arrow:dir(ltr):insensitive {
