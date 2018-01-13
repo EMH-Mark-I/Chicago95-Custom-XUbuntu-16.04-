@@ -11,7 +11,9 @@ gtk3-nocsd (See INSTALL.md for setup)
 (Preferred distro is Xubuntu 16.04 LTS)
 
 #### Known Issues
-Some GTK applications such as Firefox might display inconsistencies such as adopting elements of the system theme but attempt to re-fit them in a flat / material design approach. In regards to visual consistency, this theme may not be perfectly compatible with modern GTK applications.
+Some GTK applications such as Firefox might display inconsistencies such as adopting choice elements of the system theme but attempt to fit them in a flat / material design approach in self drawn interfaces. In regards to visual consistency, this theme may not be perfectly compatible with modern GTK applications.
+
+Libre Office GTK3 doesn't look very good on this theme. I'm not sure why, but I'm trying to fix it. In the mean time you can remove the `libreoffice-gtk3` package which will cause Libre Office to fallback onto GTK2 which is far more consistent and looks better.
 
 #### Screenshots
 ![](images/Desktop1.jpg "Desktop")

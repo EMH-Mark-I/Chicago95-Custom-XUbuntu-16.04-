@@ -84,6 +84,12 @@ In the “Items” tab, add the following in this order:
 
     12. Orage Panel Clock. ( In the plugin settings, enable check box “Show frame” and replace the text in “Line 1” with %I:%M %p.) Note: If you want to display the date in the clock, append “%D” in “Line 1.” If you want a better looking date, you could replace that by appending “%b %m %Y” instead.
 
+#### • Libre Office 5 (GTK3 theme Inconsistencies) - workaround:
+Libre Office with the GTK3 theme doesn't look very good. I'm not sure why, but I'm trying to fix it. In the mean time you can remove the `libreoffice-gtk3` package which will cause Libre Office to fallback onto GTK2 which is far more consistent and looks better.
+
+    sudo apt remove libreoffice-gtk3
+
+
 #### • GTK3 (GNOME) applications missing titlebar colour & border - workaround:
 Disabling Client Side Decorations with [gtk3-nocsd](https://github.com/PCMan/gtk3-nocsd) will allow for the XFCE window manager to correctly display borders and titlebars over GTK3 applications that are utilizing Client Side Decorations. Check the README.md for this reason.
 
