@@ -90,7 +90,7 @@ Libre Office with the GTK3 theme doesn't look very good. I'm not sure why, but I
     sudo apt remove libreoffice-gtk3
 
 
-#### • GTK3 (GNOME) applications missing titlebar colour & border - workaround:
+#### • Disable GNOME client side decorations and scroll bars:
 Disabling Client Side Decorations with [gtk3-nocsd](https://github.com/PCMan/gtk3-nocsd) will allow for the XFCE window manager to correctly display borders and titlebars over GTK3 applications that are utilizing Client Side Decorations. Check the README.md for this reason.
 
 Note: If you run this theme without gtk3-nocsd, you will notice some GTK3 applications (Software centre, Cat Fish file search, or the Gnome Disk utility) missing visible borders and lack of a distinct header bar. They are still usable, but just unsightly.
@@ -120,6 +120,7 @@ Set the system variable for gtk3-nocsd.
 
     echo "GTK_CSD=0" | sudo tee --append /etc/environment
     echo "LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libgtk3-nocsd.so.0" | sudo tee --append /etc/environment
+    echo "GTK_OVERLAY_SCROLLING=0" | sudo tee --append /etc/environment
 
 Log out then log back in.
 
@@ -129,6 +130,7 @@ Remove the following system variables from your `/etc/environment` file with a f
 
     GTK_CSD=0
     LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libgtk3-nocsd.so.0
+    GTK_OVERLAY_SCROLLING=0
 
 Log out then log back in before continuing!
 

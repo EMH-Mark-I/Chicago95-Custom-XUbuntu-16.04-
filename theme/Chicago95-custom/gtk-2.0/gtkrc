@@ -518,7 +518,7 @@ widget "gtk-tooltip*" style "gnome-color-chooser-tooltips"
 # Desktop shortcut icon style & text shadow
 style "xfdesktop-icon-view" {
   XfdesktopIconView::label-radius = 0.99
-  XfdesktopIconView::label-alpha = 0
+  XfdesktopIconView::label-alpha = 255
   XfdesktopIconView::selected-label-alpha = 255
 #  XfdesktopIconView::shadow-x-offset = 1				#Enable these if you want a shadow behind text
 #  XfdesktopIconView::shadow-y-offset = 1				#Enable these if you want a shadow behind text
@@ -529,11 +529,16 @@ style "xfdesktop-icon-view" {
 #  XfdesktopIconView::shadow-blur-radius = 2				#Enable this if you want a a blurry shadow behind text
   XfdesktopIconView::cell-spacing = 5
   XfdesktopIconView::cell-padding = 0
+  XfdesktopIconView::cell-color = "#c0c0c0"
   XfdesktopIconView::cell-text-width-proportion = 2.4
   XfdesktopIconView::ellipsize-icon-labels = 0
 
-  fg[NORMAL] = @selected_fg_color
-  fg[ACTIVE] = @selected_fg_color
+  base[NORMAL] = "#008081"		#This is the desktop icon label background colour.
+  base[SELECTED] = @selected_bg_color	#This is the desktop icon label background colour selected state.
+  base[ACTIVE] = @selected_bg_color	#This is the desktop icon label background colour active state.
+  fg[NORMAL] = @selected_fg_color	#This is the desktop icon label TEXT colour state.
+  fg[SELECTED] = @selected_fg_color	#This is the desktop icon label TEXT colour selected state.
+  fg[ACTIVE] = @selected_fg_color	#This is the desktop icon label TEXT colour active state.
 
 }
 

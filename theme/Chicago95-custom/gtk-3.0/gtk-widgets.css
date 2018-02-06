@@ -127,10 +127,14 @@ GtkLabel:insensitive,
 GtkBox,
 GtkBox:insensitive,
 GtkGrid,
-GtkGrid:insensitive {
+GtkGrid:insensitive,
+GtkScrolledWindow {
     background-color: transparent;
 }
 
+GtkVBox GtkBox{
+    background-color: @bg_color;
+}
 
 /******************
  * visual effects *
@@ -254,6 +258,10 @@ GtkToggleButton:not(GtkCheckButton):insensitive {
 
 GtkCheckButton {
     padding: 0px;
+}
+
+GtkMenuButton {
+    padding: 4px;
 }
 
 
@@ -972,13 +980,16 @@ GtkPopover > .toolbar {
 GtkPopover.osd > .toolbar .button {
     border-radius: 0;
     border-width: 0px;
-
     background-image: none;
 }
 
 GtkPopover .separator {
     background-color: red;
     color: @fg_color;
+}
+
+GtkPopover GtkBox {
+    background-color:  @info_bg_color;
 }
 
 GtkModelButton.button,
@@ -993,8 +1004,17 @@ GtkModelButton.button:insensitive
     color: @theme_fg_color;
 }
 
+GtkModelButton GtkBox {
+    background-color:  @info_bg_color;
+}
+
+GtkModelButton:hover GtkBox {
+    background-color:  white;
+}
+
 GtkModelButton.button:hover {
     box-shadow: inset 3px 3px white, inset 1px 1px #868686, inset -1px -1px #868686; 
+    background-color: white;
 }
 
 GtkModelButton.button:active:hover,
@@ -1021,8 +1041,10 @@ GtkModelButton.button:active:insensitive  {
     -GtkWidget-focus-line-width: 1;
     -GtkWidget-focus-padding: 0;
     padding: 0;
-    border-width: 1px;
-    border-style: solid;
+    border-left: 1px solid white;
+    border-top: 1px solid white;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
 }
 
 .notebook.frame.top {
@@ -2068,7 +2090,7 @@ GtkColorButton.button {
 /**************
  * header-bar *
  **************/
-
+/* Commenting thes out for now since they were causing padding issues with menu buttons being activated
 .header-bar {
     padding: 6px;
     border-width: 1px;
@@ -2096,7 +2118,7 @@ GtkColorButton.button {
     font: smaller;
     padding: 0 12px;
 }
-
+*/
 
 
 /***********
