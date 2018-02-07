@@ -136,6 +136,10 @@ GtkVBox GtkBox{
     background-color: @bg_color;
 }
 
+GtkPrintUnixDialog GtkBox {
+background-color: @bg_color;
+}
+
 /******************
  * visual effects *
  ******************/
@@ -2299,6 +2303,10 @@ GtkViewport.frame {
 .view {
     background-color: @theme_base_color;
     color: @theme_text_color;
+}
+
+GtkPrintUnixDialog > .view {
+    background-color: @bg_color;
 }
 
 .view:insensitive,
