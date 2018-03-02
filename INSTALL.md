@@ -20,69 +20,49 @@ Step 4: Copy the "gtk.css" file from the "misc" directory into "/home/$USER/.con
 
 ## Configuration
 
-Enable the notification balloon theme.
+#### Enabling the GTK theme
+Open the XFCE settings manager > Appearance.
 
-• To set the notification theme, open the system notification settings manager (xfce4-notifyd-config) and in the "Theme" option select Chicago95-custom in the pull down menu.
+- Choose Chicago95 as the theme style.
 
-Enable the XFCE shell and icon themes.
+#### Enabling the Window Manager theme
+Open the XFCE settings manager > Window Manager.
 
-• In XFCE select Settings -> Appearance. Click on 'Style' and select Chicago95-custom.
+- Choose Chicago95.
+- Set Title font to Sans Bold, 8 points.
 
-• In the Appearance manager click on the "Icons" tab and select Chicago95.
+#### Enabling the theme for QT5 applications (optional)
+Open your terminal and install the qt5 style plugins package.
 
-Enable the XFCE window manager theme.
+- sudo apt install qt5-style-plugins
 
-• In XFCE select Settings -> Window Manager. Under 'Style' select Chicago95-custom.
+Relogin for changes to take place.
 
-#### • Font Settings:
+#### Enabling the notification theme
+Open the XFCE settings manager > Notifications.
 
-In the XFCE Appearance Manager, select the "Fonts" tab and apply the following information.
+- Choose Chicago95 for the theme.
+- Adjust Opacity to 100%.
 
-    Default Font: Sans 10
+#### Setting up the XFCE panel
+Open the XFCE settings manager > Panel
 
-    Enable Antialiasing: Yes
+- Measurments: Even numbers are preffered for the Row Size slider. The smallest optimal panel row size for this theme is 26 pixels. If your panel is below that size, you will encounter icon scaling issues.
+- Under the Appearance tab set the background style to "None (use system style.)"
 
-    Hinting: Full
+Here's a list for the panel Items plugin layout as seen from the screen-shots. This is optional, the item configuration is up to you after all.
 
-    Sub-pixel order: None
-
-In the XFCE Window Manager
-
-    Title bar font: Sans Bold 8pt
-
-#### • Compositor Settings:
-
-In the XFCE "Window Manager Tweaks" manager, select the "Compositor" tab. Uncheck "Show shadows under dock windows." This will prevent applications from casting a shadow onto the task bar.
-
-#### • Panel Setup:
-
-Create a new panel if necessary. Horizontal, 32px high ONLY (this is for the persistent START button), and 100% Length. (Only horizontal taskbar. No vertical taskbar, sorry.) In the “Appearance” tab set the background style to "None" so that it inherits the theme style and adjust the Alpha to 100.
-
-In the “Items” tab, add the following in this order:
-
-    1. Application Menu OR Whisker Menu; 
-
-    2. Separator (Handle Style); 
-
-    3. Custom Launcher, Custom Launcher, Custom Launcher, etc.
-
-    4. “Show Desktop” plugin; 
-
-    5. Separator (Handle Style); 
-
-    6. Window Buttons (Sorting Order: Time-stamp and Window Grouping is Always. Uncheck “Show Handle” if it’s enabled. Uncheck "Show flat buttons" if it's enabled.); 
-
-    7. Separator (Transparent with Expanding); 
-
-    8. Separator (Handle Style); 
-
-    9. Notification Area (19px max icon size); 
-
-    10. PulseAudio Plugin (Uncheck mark in the plugin settings, "Show Notifications when volume changes." it will conflict with XFCE notifiyd by making duplicate volume notifications); 
-
-    11. Separator (Transparent); 
-
-    12. Orage Panel Clock. ( In the plugin settings, enable check box “Show frame” and replace the text in “Line 1” with %I:%M %p.) Note: If you want to display the date in the clock, append “%D” in “Line 1.” If you want a better looking date, you could replace that by appending “%b %m %Y” instead.
+1. Application Menu or Whisker Menu;
+2. Separator (Handle Style);
+3. Custom Launcher, Custom Launcher, Custom Launcher, etc;
+4. “Show Desktop” plugin;
+5. Separator (Handle Style);
+6. Window Buttons (Uncheck "Show flat buttons" and "Show Handle.;" Sorting Order: None; Window grouping: Never);
+7. Separator (Transparent with Expanding);
+8. Separator (Handle Style);
+9. Indicator Plugin OR Notification Area (19px max icon size preferred);
+10. Separator (Transparent);
+11. Orage Panel Clock. (Enable check box “Show frame” and replace the text in “Line 1” with %I:%M %p.)
 
 #### • Libre Office 5 (GTK3 theme Inconsistencies) - workaround:
 Libre Office with the GTK3 theme doesn't look very good. I'm not sure why, but I'm trying to fix it. In the mean time you can remove the `libreoffice-gtk3` package which will cause Libre Office to fallback onto GTK2 which is far more consistent and looks better.
@@ -143,13 +123,65 @@ Remove the dependencies unless they are required by any other appplication.
 
     sudo apt remove libgtk-3-dev libgirepository1.0-dev
 
-#### • Whisker Menu / Application Menu start button:
+## Optional configurations
+The following configurations are optional and not required but can be used to enhance the theme.
 
-Open the properties menu of either Whisker Menu or Application Menu by right clicking on their panel icons and selecting “properties.” Click the icon button in the properties window. 
+#### Whisker Menu and XFCE Application Menu Start Buttons
 
-The custom Start Button icons are located in the following directory (depending on where you installed the overall theme): /home/$USER/.themes/Chicago95-custom/misc/GTK2 Start Buttons/. Select a button that you would like.
+#### • Whisker Menu
+Open the XFCE settings manager > Panel > Items tab > Double click the Whisker menu item in the item list.
 
-If the icon appears crunched or blurry, then log out and log back in. The icon should appear a regular size. If it still appears out of resolution, make sure that the task panel is set to 32px high.
+- In the whisker properties menu click the icon option.
+- In the icon select window navigate to `/home/$USER/.themes/Chicago95/misc` (with $USER being your username.)
+
+`misc/` contains simple small icons if you want a basic icon. These might be ideal for vertical deskbar panels.
+
+`GTK2 start buttons/` contains start button icons.
+
+`GTK3 start buttons/` contains start button icons if you are using the GTK3 version of the plugin.
+
+Since the Whisker Menu plugin is GTK2 by default, you'll have to choose an icon associated with your panel size. For example, tux_32px.png would be ideal on a panel with a row size of 32 pixels.
+
+Note: The smallest optimal panel row size for this theme is 26 pixels. If your panel is below that size, you will encounter icon scaling issues.
+
+#### • Application Menu
+Open the XFCE settings manager > Panel > Items tab > Double click the Applications Menu item in the item list.
+
+- In the Applications properties menu click the icon option.
+- In the icon select window navigate to `/home/$USER/.themes/Chicago95/misc` (with $USER being your username.)
+
+`misc/` contains simple small icons if you want a basic icon. These might be ideal for vertical deskbar panels.
+
+`GTK2 start buttons/` contains start button icons.
+
+Since the Application Menu plugin is GTK2 by default, you'll have to choose an icon associated with your panel size. For example, tux_32px.png would be ideal on a panel with a row size of 32 pixels.
+
+Note: The smallest optimal panel row size for this theme is 26 pixels. If your panel is below that size, you will encounter icon scaling issues.
+
+#### Launcher Button scaling (advanced)
+If you want to force 16x16px icons in the launcher buttons, you can do this by making your own custom icons or through the theme by editing the panel.rc file.
+
+- Open a text editor and navigate to `/home/$USER/.themes/Chicago95/gtk-2.0/panel.rc` (with $USER being your username.)
+- Move to line 268 of the file where you will see a section specified for Launcher buttons.
+
+Example steps: You will first need to determine the panel bar row size since the launcher button icon padding is determined by the size of the panel bar.
+
+- Open the XFCE settings manager > Panel
+- Verify the "Row Size (pixels)". (Lets say that it's 38 pixels for this example.)
+- Return back to the text editor and locate the line comment that is specifying your panel bar row size. (38px height panel for this example is on line 302.)
+- Delete the "#" pound character in front of the xthickness and the ythickness values for the specified panel bar size.
+- Now Insert a "#" pound character in front of the xthickness and the ythickness values of the previous default selection, which is for a 26px height panel.
+- Save the file and reload the xfce panel bar. You can run `xfce4-panel -r` in a terminal to reload the panel.
+
+Note: If you use a vertical deskbar, you could add a second row from the panel properties menu to organize the launcher buttons into rows.
+
+#### Shadows
+Disable shadows in compositing for an authentic appearance, or at the very least disable “show shadows under dock windows” to prevent dark shading from the panel bar overlapping onto maximized applications.
+
+- Open the XFCE settings manager > Window Manager Tweaks > Compositor tab
+- Uncheck "Show shadows under pupup windows."
+- Uncheck "Show shadows under dock windows."
+- Uncheck "Show shadows under regular windows."
 
 ## Extra Stuff:
 
