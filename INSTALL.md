@@ -7,16 +7,16 @@ Step 1: Create ".themes" and ".icons" directories  in your user directory if the
 
 Step 2: Copy the "Chicago95-custom" directory into the ".themes" directory.
 
-    cp -r Chicago95-Custom-XUbuntu-16.04-/theme/Chicago95-custom/ ~/.themes/
+    cp -r Chicago95-Custom-XUbuntu-16.04--master/theme/Chicago95-custom/ ~/.themes/
 
 Step 3: Copy the "Chicago95-icons-tux" directory into the ".icons" directory.
 
-    cp -r Chicago95-Custom-XUbuntu-16.04-/icons/Chicago95-icons-tux/ ~/.icons/
+    cp -r Chicago95-Custom-XUbuntu-16.04--master/icons/Chicago95-icons-tux/ ~/.icons/
 
 Step 4: Copy the "gtk.css" file from the "misc" directory into "/home/$USER/.config/gtk-3.0/" or append the file if a gtk.css file already exists.
 (Note: You may have to create the "gtk-3.0" directory.)
 
-    mkdir -p ~/.config/gtk-3.0 && cat Chicago95-Custom-XUbuntu-16.04-/misc/gtk.css >> ~/.config/gtk-3.0/gtk.css
+    mkdir -p ~/.config/gtk-3.0 && cat Chicago95-Custom-XUbuntu-16.04--master/misc/gtk.css >> ~/.config/gtk-3.0/gtk.css
 
 ## Configuration
 
