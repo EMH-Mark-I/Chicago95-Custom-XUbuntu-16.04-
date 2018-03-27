@@ -2087,7 +2087,8 @@ GtkColorEditor GtkColorSwatch.color-light:hover {
     border-color: alpha(black, 0.3);
 }
 
-GtkColorButton.button {
+GtkColorButton.button,
+GtkColorButton.button:active {
     padding: 2px;
 }
 
