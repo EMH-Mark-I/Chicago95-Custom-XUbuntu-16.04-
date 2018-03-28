@@ -193,37 +193,72 @@
 .check row:selected:focus {
     -gtk-icon-source: url("assets/checkbox-unchecked.png");
 }
+	GtkScrolledWindow .check,
+	GtkScrolledWindow .check row:selected,
+	GtkScrolledWindow .check row:selected:focus {
+	    -gtk-icon-source: url("assets/checkbox-unchecked_scrolled.png");
+	}
 
 .check:insensitive,
 .check row:selected:insensitive,
 .check row:selected:focus:insensitive {
     -gtk-icon-source: url("assets/checkbox-unchecked-insensitive.png");
 }
+	GtkScrolledWindow .check:insensitive,
+	GtkScrolledWindow .check row:selected:insensitive,
+	GtkScrolledWindow .check row:selected:focus:insensitive {
+	    -gtk-icon-source: url("assets/checkbox-unchecked-insensitive_scrolled.png");
+	}
 
 .check:active, .check:checked,
 .check row:selected:active, .check row:selected:checked,
 .check row:selected:focus:active, .check row:selected:focus:checked {
     -gtk-icon-source: url("assets/checkbox-checked.png");
 }
+	GtkScrolledWindow .check:active,
+	GtkScrolledWindow .check:checked,
+	GtkScrolledWindow .check row:selected:active,
+	GtkScrolledWindow .check row:selected:checked,
+	GtkScrolledWindow .check row:selected:focus:active,
+	GtkScrolledWindow .check row:selected:focus:checked {
+	    -gtk-icon-source: url("assets/checkbox-checked_scrolled.png");
+	}
 
 .check:active:insensitive, .check:checked:insensitive,
 .check row:selected:active:insensitive, .check row:selected:checked:insensitive,
 .check row:selected:focus:active:insensitive, .check row:selected:focus:checked:insensitive {
     -gtk-icon-source: url("assets/checkbox-checked-insensitive.png");
 }
-
+	GtkScrolledWindow .check:active:insensitive,
+	GtkScrolledWindow .check:checked:insensitive,
+	GtkScrolledWindow .check row:selected:active:insensitive,
+	GtkScrolledWindow .check row:selected:checked:insensitive,
+	GtkScrolledWindow .check row:selected:focus:active:insensitive,
+	GtkScrolledWindow .check row:selected:focus:checked:insensitive {
+	    -gtk-icon-source: url("assets/checkbox-checked-insensitive_scrolled.png");
+	}
 
 .check:inconsistent,
 .check row:selected:inconsistent,
 .check row:selected:focus:inconsistent {
     -gtk-icon-source: url("assets/checkbox-mixed.png");
 }
+	GtkScrolledWindow .check:inconsistent,
+	GtkScrolledWindow .check row:selected:inconsistent,
+	GtkScrolledWindow .check row:selected:focus:inconsistent {
+	    -gtk-icon-source: url("assets/checkbox-mixed_scrolled.png");
+	}
 
 .check:inconsistent:insensitive,
 .check row:selected:inconsistent:insensitive,
 .check row:selected:focus:inconsistent:insensitive {
     -gtk-icon-source: url("assets/checkbox-mixed-insensitive.png");
 }
+	GtkScrolledWindow .check:inconsistent:insensitive,
+	GtkScrolledWindow .check row:selected:inconsistent:insensitive,
+	GtkScrolledWindow .check row:selected:focus:inconsistent:insensitive {
+	    -gtk-icon-source: url("assets/checkbox-mixed-insensitive_scrolled.png");
+	}
 
 .radio,
 .radio row:selected,

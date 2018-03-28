@@ -307,8 +307,6 @@ GtkMenuButton {
 .cell {
     border-width: 0;
     border-style: solid;
-    border-color: #FFF #000 #000 #FFF;
-    
     border-radius: 0;
 }
 
@@ -338,7 +336,7 @@ GtkCheckButton:hover,
 GtkCheckButton:active:hover,
 GtkCheckButton:selected,
 GtkCheckButton:selected:focus {
-    background-color: @bg_color;
+    background-color: transparent;
 }
 
 /*****************
@@ -542,12 +540,13 @@ GtkComboBox.combobox-entry .menu {
  * expander *
  ************/
 
-GtkTreeView.view.expander {
+GtkTreeView expander:dir(ltr) {
     -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
     color: @theme_fg_color;
 }
-GtkTreeView.view.expander:dir(rtl) {
+GtkTreeView expander:dir(rtl) {
     -gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl");
+    color: @theme_fg_color;
 }
 
 .expander,
@@ -1711,6 +1710,44 @@ GtkSidebarRow .sidebar-label:dir(rtl) {
 
 .sidebar-item.needs-attention > GtkLabel {
     background-size: 6px 6px, 0 0;
+}
+
+/*************
+ * overshoot *
+ *************/
+.overshoot.top {
+    background: none;
+}
+
+.overshoot.right {
+    background: none;
+}
+
+.overshoot.bottom {
+    background: none;
+}
+
+.overshoot.left {
+    background: none;
+}
+
+/**************
+ * undershoot *
+ **************/
+.undershoot.top {
+    background: none;
+}
+
+.undershoot.right {
+    background: none;
+}
+
+.undershoot.bottom {
+    background: none;
+}
+
+.undershoot.left {
+    background: none;
 }
 
 /**************
